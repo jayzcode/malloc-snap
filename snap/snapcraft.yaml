@@ -1,0 +1,20 @@
+name: myapp
+base: core20
+version: '0.20.1'
+summary: Hello World.
+description: Basic app to test application
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  myapp:
+    command: usr/local/bin/myapp
+
+parts:
+  myapp:
+    plugin: autotools
+    source: ${SNAPCRAFT_PROJECT_DIR}/src-dir/
+    #autotools-configure-parameters:
+    #- --host aarch64-linux-gnu
+
